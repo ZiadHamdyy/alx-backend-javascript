@@ -1,10 +1,9 @@
 function cleanSet(set, startString){
     let result = [];
-    if (startString == ''){
-        return ''
-    }
+    if (startString === '' || typeof startString !== 'string')
+        return '';
     set.forEach(element => {
-        if(element.startsWith(startString)){
+        if(typeof element === 'string' && element.startsWith(startString)){
             result.push(element.substring(startString.length));
         }
     });
