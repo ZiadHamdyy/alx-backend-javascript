@@ -1,14 +1,10 @@
 function cleanSet(set, startString){
-    const string = [];
-    let flag = 0;
-    if (startString === '')
-        return '';
+    const result = [];
     set.forEach(element => {
-        if(element.startsWith(startString)){
-            string.push(element.slice(startString.length));
-            flag = 1;
+        if(startString != "" && element.startsWith(startString)){
+            result.push(element.substring(startString.length));
         }
     });
-    return string.join('-');
+    return result.join('-');
 }
 export default cleanSet;
