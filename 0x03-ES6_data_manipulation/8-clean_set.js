@@ -1,11 +1,10 @@
 function cleanSet(set, startString){
-    let result = "";
+    let result = [];
     set.forEach(element => {
         if(element.startsWith(startString)){
-            result += element.slice(startString.length) + "-";
+            result.push(element.substring(startString.length));
         }
     });
-    result = result.slice(0, -1);
-    return result;
+    return result.join('-');
 }
 export default cleanSet;
